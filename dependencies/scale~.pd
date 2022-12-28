@@ -1,0 +1,13 @@
+#N canvas 44 365 514 329 10;
+#X text 82 60 ((t2 - t1) * (v - f1)) / (f2 - f1) + t1;
+#X text 125 85 v or $f1 = input f1 or \$1 = min from value f2 or \$2 = max from value t1 or \$3 = min to value t2 or \$4 = max to value \$5 = exponential rate;
+#X obj 43 220 pow~ \$5;
+#X obj 43 193 expr~ ($v1 - \$1) / (\$2 - \$1);
+#X obj 43 247 expr~ ((\$4 - \$3) * $v1) + \$3;
+#X obj 43 166 inlet~;
+#X obj 43 274 outlet~;
+#X text 10 11 @Dalius Singer 05.05.2019 / Update 2022, f 43;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
